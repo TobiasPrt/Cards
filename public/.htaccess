@@ -1,0 +1,2 @@
+# php_value error_reporting 4095
+# php_value display_errors stdout

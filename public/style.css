@@ -1,0 +1,560 @@
+/* Deklarationen */
+
+	@font-face {
+		font-family: 'SF-Pro-Display-Black';
+		src: url('fonts/SF-Pro-Display-Black.otf') format('opentype');
+	}
+
+	@font-face {
+		font-family: 'SF-Pro-Display-Heavy';
+		src: url('fonts/SF-Pro-Display-Heavy.otf') format('opentype');
+	}
+	
+	@font-face {
+		font-family: 'SF-Pro-Display-Bold';
+		src: url('fonts/SF-Pro-Display-Bold.otf') format('opentype');
+	}
+	
+	@font-face {
+		font-family: 'SF-Pro-Display-Semibold';
+		src: url('fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+	}
+	
+	@font-face {
+		font-family: 'SF-Pro-Display-Medium';
+		src: url('fonts/SF-Pro-Display-Medium.otf') format('opentype');
+	}
+	
+	@font-face {
+		font-family: 'SF-Pro-Display-Regular';
+		src: url('fonts/SF-Pro-Display-Regular.otf') format('opentype');
+	}
+	
+	@font-face {
+		font-family: 'SF-Pro-Display-Light';
+		src: url('fonts/SF-Pro-Display-Light.otf') format('opentype');
+	}
+	
+	@font-face {
+		font-family: 'SF-Pro-Display-Thin';
+		src: url('fonts/SF-Pro-Display-Thin.otf') format('opentype');
+	}
+
+	:root {
+		--Black:			'SF-Pro-Display-Black';
+		--Heavy: 			'SF-Pro-Display-Heavy';
+		--Bold: 			'SF-Pro-Display-Bold';
+		--Semibold: 		'SF-Pro-Display-Semibold';
+		--Medium: 			'SF-Pro-Display-Medium';
+		--Regular: 			'SF-Pro-Display-Regular';
+		--Light: 			'SF-Pro-Display-Light';
+		--Thin: 			'SF-Pro-Display-Thin';
+		--background:		rgb(255, 250, 244);
+		--accent:			rgb(20, 160, 20);
+		--logobackground: 	rgb(240,240,240);
+		--black:			rgb(30,30,30);
+	}
+
+/* ----------------------------------------------------------- */
+/* Allgemeine Selektoren */
+
+
+a, a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+html {
+	font-size: 			18px;
+}
+
+body {
+	font-family:		var(--Regular);
+	background-color: 	var(--background);
+	color:				var(--black);
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	letter-spacing: 0.4px;
+}
+
+input {
+	-webkit-appearance: none;
+	background-color: var(--background);
+	border: 0;
+}
+
+input:focus {
+	outline: none;
+}
+
+.error {
+	font-family: var(--Light);
+	color: red;
+}
+
+button {
+	-webkit-appearance: none;
+	background-color: transparent;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	border: none;
+}
+
+/* --------------------------------------------------- */
+/* Navigation */
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding-top: 20px;
+}
+
+.nav img {
+	height: 30px;
+}
+
+.nav--lmr {
+	height: 50px;
+}
+
+.nav--lmr img {
+	height: 25px;
+}
+
+.nav--lmr div {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+}
+
+.nav--lmr div span {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav--lmr div span:first-child {
+	margin-right: auto;
+	justify-content: flex-start;
+}
+
+.nav--lmr div span:last-child {
+	margin-left: auto;
+	justify-content: flex-end;
+}
+
+.nav__header {
+	font-size: 1.6rem;
+}
+
+.nav__backimage {
+	height: 15px !important;
+	transform: scaleX(-1);
+	margin-right: 5px;
+}
+
+
+/* --------------------------------------------------- */
+/* Loginform used in: index.php & settings.php */
+
+.loginform {
+	border: 0.5px solid rgba(0,0,0, 0.3);
+	border-radius: 10px;
+	width: 100%;
+	max-width: 250px;
+}
+
+.loginform div:first-child {
+	border-bottom: 0.5px solid rgba(0,0,0, 0.3);
+}
+
+/* wählt alle divs in .loginform ab dem dritten div aus */
+.loginform div:nth-child(n + 3) {
+	border-top: 0.5px solid rgba(0,0,0, 0.3);
+}
+
+.loginform div {
+	padding: 10px 15px;
+	font-size: 0.7rem;
+	font-family: var(--Medium);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.loginform div span:last-child {
+	width: 60%;
+}
+
+.content {
+	display: flex;
+}
+
+.content--center {
+	justify-content: center;
+	padding-top: 20vh;
+}
+
+.login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 70%;
+}
+
+.login__logo {
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+}
+
+.login__logo img {
+	width: 100%;
+}
+
+.login__header {
+	margin-top: 0.7rem;
+	font-size: 1.8rem;
+	margin-bottom: 0.8rem;
+	font-family: var(--Light);
+	letter-spacing: 0.6px;
+}
+
+.register__button a {
+	text-decoration: none;
+	color: var(--accent);
+	font-size: 0.7rem;
+}
+
+.login__button button {
+	border: none;
+	background-color: transparent;
+	color: rgba(0,0,0, 0.2);
+	font-size: 1.2rem;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	transition: color 0.2s ease-in-out;
+}
+
+form:valid .login__button button {
+	color: var(--accent);
+}
+
+
+/* --------------------------------------------------- */
+/* List used in: list.php & settings.php */
+
+.list {
+	margin-top: 80px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	width: 100%;
+	align-items: center;
+}
+
+.list--settings {
+	position: fixed;
+	margin-top: 80px;
+}
+
+.list__item {
+	width: 90%;
+	border-top: 0.5px solid rgba(0,0,0, 0.3) !important;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.list .list__item:last-child {
+	border-bottom: 0.5px solid rgba(0,0,0, 0.3);
+}
+
+.list__item span:first-child {
+	align-self: center;
+}
+
+.list__item span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.list__item span img {
+	height: 1rem;
+}
+
+/* --------------------------------------------------- */
+/* Settings */
+
+.mail, .password, .newcard {
+	margin-top: 70px;
+	margin-bottom: -70px;
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--background);
+	position: fixed;
+	transition: transform 0.3s ease-in-out;
+	transform: translateX(100vw);
+}
+
+.content-settings {
+	padding-top: 10vh;
+}
+
+.show--settings {
+	transform: translateX(0);
+}
+
+.login--settings {
+	width: 80%;
+}
+
+.loginform--settings {
+	max-width: 350px;
+}
+
+textarea {
+	border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+
+/* --------------------------------------------------- */
+/* In-Game */
+
+.content--game {
+	padding-top: 10vh;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+
+.fortschritt {
+	width: 80vw;
+	margin-bottom: 10px;
+}
+
+.flipCard {
+   width: 80vw;
+   height: 50vh;
+}
+.flipCard .card.flipped {
+  transform:rotatey(-180deg);
+  -ms-transform:rotatey(-180deg); /* IE 9 */
+  -moz-transform:rotatey(-180deg); /* Firefox */
+  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  -o-transform:rotatey(-180deg); /* Opera */
+}
+.flipCard .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  -moz-transform-style: preserve-3d;
+  -moz-transition: 0.5s;
+  -ms-transform-style: preserve-3d;
+  -ms-transition: 0.5s;
+  -o-transform-style: preserve-3d;
+  -o-transition: 0.5s;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+}
+.flipCard .card .side {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 2;
+  backface-visibility: hidden;  /* W3C */
+  -webkit-backface-visibility: hidden; /* Safari & Chrome */
+  -moz-backface-visibility: hidden; /* Firefox */
+  -ms-backface-visibility: hidden; /* Internet Explorer */
+  -o-backface-visibility: hidden; /* Opera */
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  overflow: auto;
+}
+.flipCard .card .back {
+  background: white;
+  transform:rotatey(-180deg);
+  -ms-transform:rotatey(-180deg); /* IE 9 */
+  -moz-transform:rotatey(-180deg); /* Firefox */
+  -webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  -o-transform:rotatey(-180deg); /* Opera */
+}
+
+.flipCard .card .front {
+  text-align: center;
+  line-height: 50px;
+  border-radius: 15px;
+  background-color: var(--background);
+  background-image: url('images/Card_Question.png');
+  background-size: 100%;
+  background-position: center;
+}
+.flipCard .card .back {
+  text-align: center;
+  line-height: 50px;
+  background-color: var(--background);
+  background-image: url('images/Card_Answer.png');
+  background-size: 100%;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.gameform {
+	display: flex;
+	justify-content: space-between;
+	width: 80vw;
+}
+
+.gamebutton {
+	margin-top: 30px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 5px;
+	padding: 10px 20px;
+	box-shadow: 0 0 1px rgba(0,0,0,0.6);
+	color: var(--background);
+	font-family: var(--Medium);
+}
+
+.gamebutton--wrong {
+	background-color: red;	
+}
+
+.gamebutton--nearly {
+	background-color: orange;	
+}
+
+.gamebutton--right {
+	background-color: green;	
+}
+
+
+
+/* News */
+
+.content--news {
+	margin-top: 80px;
+	padding-top: 0;
+	height: calc(100% - 70px);
+	height: -o-calc(100% - 70px);
+	height: -webkit-calc(100% - 70px);
+	height: -moz-calc(100% - 70px);
+}
+
+.content--news div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: auto;
+	height: 100%;
+}
+
+.content--news article {
+	top: 0;
+	width: 80%;
+	border-bottom: 0.7px solid var(--black);
+}
+
+.content--news article:nth-child(2) h2 span:first-child::before {
+	content: 'NEW ';
+	font-style: italic;
+	color: red;
+}
+
+.content--news article h2 {
+	font-size: 1.1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.content--news article h2 span:last-child {
+	font-size: 0.8rem;
+	font-family: var(--Light);
+}
+
+.content--news article:last-child {
+	border-bottom: none;
+	margin-bottom: 20px;
+}
+
+.content--news article:nth-child(n+2) ul li {
+	font-size: 0.9rem;
+}
+
+.upcoming h3 {
+	font-size: 0.8rem;
+}
+
+.upcoming ul li {
+	font-size: 0.7rem;
+	font-family: var(--Light);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
