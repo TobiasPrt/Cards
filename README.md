@@ -6,11 +6,11 @@ Cards is an online flash card app, that is used by students at the FH Kiel in Ge
 ## Features of Cards
 
 - 2 Decks (Management und Unternehmensführung, Medienrezeptions- und Wirkungsforschung)
-- feeds relevant cards depending on individial progress
-- News section
+- feeds relevant cards depending on individual progress
+- news section
 - animated progress bar
 - automatically saved progress
 - mail, password is both editable
 - new cards can be proposed
 - automatic password reset function
-- mobile optimzed layout for learning on the go
+- mobile optimized layout for learning on the go
