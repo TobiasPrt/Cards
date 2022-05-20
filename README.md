@@ -1,7 +1,6 @@
 # Cards - Karteikarten
 
 Cards is an online flash card app, that is used by students at the FH Kiel in Germany.
-![Cards Hero Image](https://tobiaspoertner.com/img/cardspreview.jpg)
 
 
 ## Features of Cards
